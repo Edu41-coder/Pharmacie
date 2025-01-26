@@ -1,0 +1,66 @@
+dans
+create_produit
+create_client
+Voici le fichier réécrit avec les validations améliorées et la protection XSS :
+Côté Client (Views/produits/create_produit.php)
+1. Validation HTML
+<input type="text" 
+       pattern="[A-Za-z0-9\s\-]+"
+       title="Lettres, chiffres, espaces et tirets uniquement">
+Utilisation d'attributs pattern pour restreindre les caractères autorisés
+Messages d'aide avec l'attribut title
+2. Sanitization JavaScript
+function sanitizeInput(input) {
+    return input.replace(/[<>]/g, '');
+}
+- Suppression des caractères dangereux et application sur tous les champs texte.
+3. Validation en temps réel
+document.querySelectorAll('input[type="text"], textarea').forEach(input => {
+    input.addEventListener('input', function() {
+        this.value = sanitizeInput(this.value);
+    });
+});
+- Nettoyage automatique des entrées pendant la saisie
+Application sur tous les champs texte et textarea
+4. Affichage sécurisé des messages
+<?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?>
+- Échappement des caractères spéciaux dans les messages d'erreur/succès
+
+Côté Serveur (PHP/produits/create_produit.php)
+1. Nettoyage des entrées:
+// Pour les textes
+$nom = htmlspecialchars(trim($_POST['nom'] ?? ''), ENT_QUOTES, 'UTF-8');
+$description = htmlspecialchars(trim($_POST['description'] ?? ''), ENT_QUOTES, 'UTF-8');
+
+// Pour les nombres
+$prix_vente_ht = filter_var(
+    trim($_POST['prix_vente_ht'] ?? ''),
+    FILTER_SANITIZE_NUMBER_FLOAT,
+    FILTER_FLAG_ALLOW_FRACTION
+);
+- Utilisation de htmlspecialchars() pour les chaînes
+- Utilisation de filter_var() pour les nombres
+- Paramètre ENT_QUOTES pour échapper les guillemets
+- Encodage UTF-8 explicite.
+
+2. Validation stricte des données:
+if (!preg_match('/^[A-Za-z0-9\s\-]+$/', $nom)) {
+    throw new Exception("Le nom ne doit contenir que des lettres...");
+}
+- Expressions régulières pour valider le format
+- Validation des types de données
+- Vérification des plages de valeurs
+
+3. Protection des messages de session:
+$_SESSION['error'] = htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8');
+- Échappement des messages d'erreur avant stockage en session
+- Nettoyage lors de la récupération des messages
+
+4. Typage et conversion sécurisée
+$taux_remboursement = (int)$taux_remboursement;
+$alerte = (int)$alerte;
+
+- Cast explicite des valeurs numériques
+- Validation du type avant conversion
+Ces mesures forment une protection en profondeur contre les attaques XSS, 
+avec une validation à la fois côté client (pour l'expérience utilisateur) et côté serveur (pour la sécurité).

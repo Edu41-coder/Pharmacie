@@ -1,0 +1,15 @@
+On va maintenant creer la page des ventes
+dans la page ventes il y aura des rectrictions par rapport a l'utilisateur, si l'utilisateur a comme role 'vendeur'il ne pourra vendre que des produits dont la prescription cest 'non'.
+
+pour faire une vente on comencera pour choisir un  client d'une  liste clients(le code pour faire la liste des clients sest deja fait dans index_clients,demande moi le code si tua as besoin), ou on proposera l'option'client de passage' si cest pas un client enregistré.
+apres on ajoutera des produits procedents de l'inventaire (le code pour faire la liste des produit de l'inventaire sest deja fait dans index_inventaire,demande moi le code si tu as besoin) avec leur numero d'unités vendues, on pourra ajouter autant de produits qu'on veut ,ligne par ligne
+si un produit a comme prescription 'oui' il faut obligatoirement ajouter un numero d'ordonnance et un mero_d'ordre(dont on creera aussi ordonnace da ns la table ordonance) et on aura un bouton qui permettra d'ajouter une image correspondante a cette ordonnance pour ce produit.'pas obligatoire d'image)
+comme la vente ça va etre composée de plusieurs produits, et chaque_produit a un taux de remboursemnt ça calculera le montant a regler qui sera 100-taux_remboursement*prix_ventre_ttc*qantité pour chaque produit vendu)
+Donc a chaque ajout de produit la page calculera le montant total de la vente et le montant a regler , et on prosera de le regler avec menu deroulant par 'especes', 'carte_bleu', 'cheque' champs correspondant au champ mode_encaissement de la table vente
+si c'est un cheque un doit introduire obligatoirement un numero_cheque, donc on creera aussi un cheque ave etat 'en attente' par defaut
+a la fin il y aura le bouton  aura le bouton 'encaisser'avec le quel la vente avec tous ses champs sera crée(a_rembourser sera crée comme montant totale-montant a regler
+finalement on mettra a jour l'inventaire(on deduira) avec la quantité des produits vendus, si le nombre de produits dans l'inventaire cest 0 on laissera 0, et si ça donne un numero negatif on laissera 0
+si tu as besoin de voir de fichiers deja creés pour faire ça demandes les moi un par un
+
+
+voir pour la mise a jour de l'inventaire

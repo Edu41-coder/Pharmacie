@@ -1,0 +1,9 @@
+en roduit ver solo para cuadrar edit produit
+client hecho
+inventaire hecho ,ver para eliminar mensaje en delete inventaire
+a_commander hecho
+mes documents:ver mes vante y statistiques ventes
+comptabilié, tout revoir
+tva hecho
+paseer commande hecho
+gererutilisateurs hecho

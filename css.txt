@@ -1,0 +1,3 @@
+pour champs de recherche avec saisie dynamique  
+sur tables select2.js select2.css et jquerry
++code javascript.

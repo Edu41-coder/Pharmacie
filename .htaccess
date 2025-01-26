@@ -1,0 +1,7 @@
+<Files ".env">
+    Require all denied
+</Files>
+<FilesMatch "\.txt$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

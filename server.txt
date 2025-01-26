@@ -1,0 +1,21 @@
+http://localhost/Pharmacie_S/index.php
+
+http://localhost/Pharmacie_S/PHP/inventaire/sort_inventaire.php?sort=produit_id&direction=asc
+
+http://localhost/Pharmacie_S/test_env.php
+
+http://localhost/Pharmacie_S/test_db_connection.php
+
+http://localhost/Pharmacie_S/test_autoload.php
+
+
+session.gc_maxlifetime=1440
+
+use pharmacie
+db.dropDatabase()
+
+http://localhost/Pharmacie_S/PHP/comptabilité/autocomplete_cheque.php?etat=valide
+
+http://localhost/Pharmacie_S/PHP/clients/search_clients.php
+
+http://localhost/Pharmacie_S/PHP/produits/tooltips.html

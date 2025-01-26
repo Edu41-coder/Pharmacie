@@ -1,0 +1,55 @@
+recherhcer client aussi par numero carte vitale
+Souligner dans la suppression inventaire et produit  
+comme dans a_commander
+mettre verification, pour numero carte vitale valide
+voir direction a edit_inventaire
+ver para suprimir html de los indices
+dans imprimer liste,enreg  ver para meter fecha(timestamp)
+ver para quitar autoloads innnecesarios
+
+
+21/09/2024
+
+ver pare hacer facturas vente,Mongo?
+
+si hay tiempo implementar cerrar sesion expiration time
+
+como funciona DotEnv , esta solo en config database?
+  . $produitId
+voir edit_user on ne peux pas mettre meme mail?
+
+en inventario afficher derniere modification
+en inventario flechita en colunna para poder ordenar ,creciente, decreciente, orden alfabetico
+
+en ventas quitar limite y mensaje por stock 0
+
+supprimer produit:contraites cle etrangere
+
+cuando se carge fichero a commander de mongo:no poner que pas enregistré
+
+voir en create inventaireFatal 
+error: Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number 
+in C:\xampp\htdocs\Pharmacie_S\Classes\Inventaire.php:22 Stack trace:
+ #0 C:\xampp\htdocs\Pharmacie_S\Classes\Inventaire.php(22): 
+ PDOStatement->execute(Array) 
+ 1 C:\xampp\htdocs\Pharmacie_S\Classes\Inventaire.php(93):
+  Inventaire->createInventaire('6', '6')
+  #2 C:\xampp\htdocs\Pharmacie_S\PHP\inventaire\create_inventaire.php(34): 
+  Inventaire->createOrUpdateInventaire('6', '6') 
+  #3 C:\xampp\htdocs\Pharmacie_S\Views\inventaire\create_inventaire.php(5): 
+  require_once('C:\\xampp\\htdocs...') 
+  #4 {main} thrown in C:\xampp\htdocs\Pharmacie_S\Classes\Inventaire.php on line 22
+
+voir edit commnde, ça ne marche pas pour ajouter des produits
+
+retard dans le chargement de a_commander
+exces de messages alerte javascript
+
+voir pour afficher icher le nom du produit supprimé dans inventaire
+voir pour debogger supression totale
+
+06/10/2024 show_ordonance dans ms ordonannces, no se ve la imagen de l'ordonannce
+meterle stilo
+
+16/10
+voir pour supprimer voir_facture

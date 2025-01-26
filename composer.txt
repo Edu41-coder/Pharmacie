@@ -1,0 +1,19 @@
+ composer init
+    Would you like to define your
+     dependencies (require) interactively [yes]? yes
+     Search for a package: vlucas/phpdotenv
+    Would you like to define your dev dependencies 
+    (require-dev) interactively [yes]? no
+ composer install
+ composer dump-autoload
+
+
+ pour autoload marche
+ telecharger apcu pour php 8.2
+ php_apcu-5.1.9-7.2-ts-vc15-x64
+ copier php_apcu.dll dans ext
+ mettre dans php.init
+ extension=apcu
+
+ pour les mails
+ composer require phpmailer/phpmailer

@@ -1,0 +1,10 @@
+.index-a-commander-page {
+    background-image: url("../images/pharm6.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}

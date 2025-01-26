@@ -1,0 +1,21 @@
+edit_client
+modify_user
+
+CSRF (Cross-Site Request Forgery) :
+Le CSRF est une attaque qui force un utilisateur connecté à exécuter des actions indésirables sur une application web dans laquelle il est actuellement authentifié. L'attaquant exploite la confiance que le site a envers le navigateur de l'utilisateur.
+Utilité des tokens CSRF :
+1. Prévention des attaques CSRF : Les tokens CSRF sont la principale défense contre les attaques CSRF.
+2. Unicité de chaque requête : Chaque token est unique, ce qui empêche la réutilisation des requêtes.
+3. Validation de l'origine : Ils permettent de s'assurer que la requête provient bien du site légitime.
+4. Protection de session : Ils ajoutent une couche de sécurité supplémentaire à la session de l'utilisateur.
+5. Conformité aux bonnes pratiques : L'utilisation de tokens CSRF est considérée comme une bonne pratique de sécurité web.
+Fonctionnement :
+1. Génération : Un token unique est généré pour chaque session ou formulaire.
+2. Inclusion : Le token est inclus dans les formulaires ou les requêtes AJAX.
+3. Vérification : Le serveur vérifie la présence et la validité du token à chaque requête.
+4. Rejet : Les requêtes sans token valide sont rejetées.
+Avantages :
+Simple à implémenter
+Efficace contre les attaques CSRF
+N'affecte pas l'expérience utilisateur
+En résumé, les tokens CSRF sont un mécanisme de sécurité essentiel pour protéger les applications web contre les attaques CSRF, en garantissant que chaque requête provient d'une source légitime et autorisée.

@@ -1,0 +1,61 @@
+CREATE TABLE `ordonnance` (
+  `ordonnance_id` int(11) NOT NULL,
+  `numero_ordonnance` varchar(50) NOT NULL,
+  `image_path` varchar(255) NOT NULL,
+  `numero_d'ordre` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `cheque` (
+  `cheque_id` int(11) NOT NULL,
+  `numero_cheque` varchar(50) NOT NULL,
+  `client_id` int(11) NOT NULL,
+  `etat` enum('en_attente','valide','refuse') NOT NULL DEFAULT 'en_attente'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `image_ordonnance` (
+  `image_id` int(11) NOT NULL,
+  `ordonnance_id` int(11) NOT NULL,
+  `image_path` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `ordonnance_produit` (
+  `ordonnance_id` int(11) NOT NULL,
+  `produit_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `vente` (
+  `vente_id` int(11) NOT NULL,
+  `client_id` int(11) DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `montant` decimal(10,2) NOT NULL DEFAULT 0.00,
+  `mode_encaissement` enum('especes','carte_bleu','cheque') NOT NULL,
+  `numero_cheque` varchar(50) DEFAULT NULL,
+  `commentaire` enum('a_verifier','a_annuler') DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `vente_cheque` (
+  `vente_id` int(11) NOT NULL,
+  `cheque_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `vente_ordonnance` (
+  `vente_id` int(11) NOT NULL,
+  `ordonnance_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `vente_produit` (
+  `vente_id` int(11) NOT NULL,
+  `produit_id` int(11) NOT NULL,
+  `quantite` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+
+
+
+
+
+
+

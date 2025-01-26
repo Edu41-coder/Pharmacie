@@ -1,0 +1,117 @@
+utilisé dans index_clients;search_client.js
+index_inventaire, search_inventaire
+Installer Axios :
+npm install axios
+
+Installer Webpack et ses dépendances :
+npm install --save-dev webpack webpack-cli babel-loader @babel/core @babel/preset-env
+
+Créer le fichier webpack.config.js :
+New-Item -Path . -Name "webpack.config.js" -ItemType "file"
+
+Ouvrez le fichier webpack.config.js dans votre éditeur et ajoutez le contenu suivant :
+const path = require('path');
+
+module.exports = {
+  entry: './js/index.js',  // Ajustez le chemin selon votre structure de projet
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
+    ]
+  }
+};
+
+Modifier le fichier package.json :
+
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "build": "webpack --config webpack.config.js"
+}
+
+Exécuter la commande de build :
+npm run build
+
+Pour utiliser Axios dans votre projet, vous pouvez
+ maintenant l'importer dans vos fichiers JavaScript comme ceci :
+ import axios from 'axios';
+
+ N'oubliez pas d'inclure le fichier bundle.js 
+ dans vos pages HTML où vous voulez utiliser Axios :
+ <script src="/chemin/vers/dist/bundle.js"></script>
+
+
+ creer fichier index.js par example
+
+ // /js/index.js
+
+import axios from 'axios';
+
+// Configuration globale d'Axios
+axios.defaults.baseURL = '/Pharmacie_S/'; // Ajustez ceci selon votre configuration
+axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+// Fonction pour gérer les erreurs Axios
+const handleAxiosError = (error) => {
+    if (error.response) {
+        // La requête a été faite et le serveur a répondu avec un code d'état
+        // qui ne fait pas partie de la plage 2xx
+        console.error('Erreur de réponse:', error.response.data);
+        console.error('Status:', error.response.status);
+        console.error('Headers:', error.response.headers);
+    } else if (error.request) {
+        // La requête a été faite mais aucune réponse n'a été reçue
+        console.error('Erreur de requête:', error.request);
+    } else {
+        // Quelque chose s'est passé dans la configuration de la requête qui a déclenché une erreur
+        console.error('Erreur:', error.message);
+    }
+    console.error('Config:', error.config);
+};
+
+// Exemple de fonction utilisant Axios pour faire une requête GET
+const fetchData = async (url) => {
+    try {
+        const response = await axios.get(url);
+        return response.data;
+    } catch (error) {
+        handleAxiosError(error);
+        throw error;
+    }
+};
+
+// Exemple de fonction utilisant Axios pour faire une requête POST
+const postData = async (url, data) => {
+    try {
+        const response = await axios.post(url, data);
+        return response.data;
+    } catch (error) {
+        handleAxiosError(error);
+        throw error;
+    }
+};
+
+// Exportez les fonctions que vous voulez utiliser dans d'autres fichiers
+export { fetchData, postData };
+
+// Si vous avez du code spécifique à exécuter au chargement, vous pouvez l'ajouter ici
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM chargé, Axios est prêt à être utilisé');
+    // Vous pouvez ajouter ici du code à exécuter au chargement de la page
+});
+
+axios.min.js
+
+le fichier dist avec bondle et tous les fichiers est crée par webpack?

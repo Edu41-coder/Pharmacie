@@ -1,0 +1,518 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.index-page {
+  background-image: url("../images/pharm1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+body.login-page {
+  background-image: url("../images/pharm2.jpg");
+  background-size: cover;
+  background-position: calc(50% - 16px) calc(50% + 15px);
+  background-repeat: no-repeat;
+}
+header,
+footer {
+  background-color: #333;
+  color: white;
+  padding: 7px 0;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+header img {
+  height: 40px; /* Reduce the height of the logo */
+  margin-right: 10px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.4s ease-in, transform 0.4s ease-in,text-decoration 0.4s ease-in;
+  display: inline-block;;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  color:#007bff;
+  transform:scale(1.2);
+}
+
+.index-page h2 {
+  font-size: 2.5em; /* Augmentez la taille de la police pour h2 */
+  color: #000; /* Couleur du texte (laissez-la inchangée) */
+}
+
+.index-page p {
+  font-size: 1.5em; /* Augmentez la taille de la police pour p */
+  color: #000; /* Couleur du texte (laissez-la inchangée) */
+}
+.menu-toggle {
+  display: none;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu-toggle:focus {
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+.container {
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  overflow: hidden;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre les éléments horizontalement */
+}
+
+.container table {
+  width: 100%; /* Fait en sorte que la table prenne toute la largeur du conteneur */
+}
+
+.container h1 {
+  width: 100%; /* Fait en sorte que le titre prenne toute la largeur du conteneur */
+  text-align: center; /* Centre le texte du titre */
+}
+
+.centered-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Image de fond pour la section principale */
+body.manage-users-page {
+  background-image: url("../images/utilisateurs.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body.comptabilité-page {
+  background-image: url("../images/caisse1.png");
+  background-size: 100px 100px; /* Ajustez la taille selon vos besoins */
+  background-position: center top;
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body.ordonnances-page {
+  background-image: url("../images/ordo2.jpg");
+  background-size: 200px 200px; /* Ajustez la taille selon vos besoins */
+  background-position: center top;
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body.cheques-page {
+  background-image: url("../images/cheque2.png");
+  background-size: 200px 200px; /* Ajustez la taille selon vos besoins */
+  background-position: center top;
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/* 
+body.comptabilité-page {
+  background-image: url("../images/comptabilité.jpeg");
+  background-size: cover;
+  background-position: center -100px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+*/
+
+body.manage-clients-page {
+  background-image: url("../images/clients.jpg"); /* Changer l'image de fond */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body.vente-page {
+  background-image: url("../images/pharm5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Ajout de cette ligne */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overscroll-behavior: none; /* Empêche le scroll bounce */
+  touch-action: manipulation; /* Contrôle les actions tactiles */
+}
+
+.register-form {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.register-form label {
+  font-weight: bold;
+}
+
+.register-form input,
+.register-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.register-form button,
+.styled-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.styled-button:hover {
+  transform: translateY(-1px);
+}
+.register-form button:hover,
+.styled-button {
+  background-color: #0056b3;
+}
+body.index-produits-page {
+  background-image: url("../images/pharm4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+body.index-tva-page {
+  background-image: url("../images/tva.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+body.index-clients-page {
+  background-image: url("../images/clients.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+body.index-a-commander-page {
+  background-image: url("../images/pharm6.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+.full-width-container {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  background-color: #ffffff; /* Fond blanc opaque */
+  padding: 20px;
+  box-sizing: border-box;
+}
+.index-produits-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: none; /* Supprime la largeur maximale pour permettre une expansion complète */
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: auto;
+}
+.product-description {
+  border: 1px solid #ccc; /* Bordure grise */
+  padding: 10px; /* Espacement intérieur */
+  max-width: 100%; /* Limite la largeur à 100% du conteneur parent */
+  overflow-wrap: break-word; /* Permet de couper les mots longs */
+  background-color: #f9f9f9; /* Couleur de fond légère */
+  border-radius: 5px; /* Coins arrondis */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  white-space: pre-wrap; /* Permet de conserver les sauts de ligne et de couper les mots longs */
+  word-wrap: break-word; /* Permet de couper les mots longs */
+  word-break: break-word;
+  overflow: hidden; /* Cache le débordement */
+  text-overflow: ellipsis; /* Ajoute des points de suspension pour le texte débordant */
+  width: 100%;
+  box-sizing: border-box;
+  height: auto;
+}
+
+/* Styles spécifiques à la page de détails du produit */
+#product-details-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("../images/pharm4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+}
+#product-details-page .product-details-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#product-details-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#product-details-page .product-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+#product-details-page .product-details-table th,
+#product-details-page .product-details-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  vertical-align: top;
+}
+
+#product-details-page .product-details-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  width: 30%;
+}
+
+#product-details-page .product-description {
+  max-width: 100%;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+#product-details-page .back-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+#product-details-page .back-link:hover {
+  background-color: #45a049;
+}
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.back-link:hover {
+  background-color: #45a049;
+}
+.back-link-gray {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #808080; /* Vert mer */
+}
+.back-link-gray:hover {
+  background-color: #606060; /* Vert mer plus foncé pour l'effet hover */
+}
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.user-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-table tr:hover {
+  background-color: #f5f5f5;
+}
+@media screen and (max-width: 1200px) {
+  .user-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+.centered-link {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+th {
+  cursor: pointer;
+}
+
+th i {
+  margin-left: 5px;
+}
+
+.th-sort-asc::after {
+  content: "\25b4";
+}
+
+.th-sort-desc::after {
+  content: "\25be";
+}
+
+.th-sort-asc::after,
+.th-sort-desc::after {
+  margin-left: 5px;
+}
+
+.th-sort-asc,
+.th-sort-desc {
+  background: rgba(0, 0, 0, 0.1);
+}
+.centered-table td,
+.centered-table th {
+  text-align: center;
+  vertical-align: middle;
+}
+.filter-form .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.filter-form .form-group {
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+.filter-form .form-group:last-child {
+  display: flex;
+  align-items: flex-end;
+}
+.filter-form .btn {
+  margin-left: 5px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin: 20px 0;
+}
+.pagination .back-link.active {
+  background-color: #007bff;
+  color: white;
+}
+.main-box {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}

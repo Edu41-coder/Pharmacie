@@ -1,0 +1,126 @@
+je veux justement rajouter la couleur des entetes des colonnes fond noir , lettres en blanc
+<style>
+    .centered-content {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .search-container {
+        display: inline-block;
+        width: 50%;
+        margin: 10px auto;
+    }
+    #search-product {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    .action-buttons {
+        margin-bottom: 10px;
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin: 20px 0;
+    }
+    .pagination .back-link.active {
+        background-color: #007bff;
+        color: white;
+    }
+    .user-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    .user-table th, .user-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    .user-table th {
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        position: relative;
+        padding-right: 20px;
+    }
+    .user-table th[data-column]::after {
+        content: '▼';
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.8em;
+        opacity: 0.7;
+        color: white;
+    }
+    .user-table th[data-column].asc::after {
+        content: '▲';
+        opacity: 1;
+    }
+    .user-table th[data-column].desc::after {
+        content: '▼';
+        opacity: 1;
+    }
+    .user-table th[data-column]:hover {
+        background-color: #0056b3;
+    }
+    .user-table tr:nth-child(even) {
+        background-color: #f9f9f9 !important;
+    }
+    .user-table tr:hover {
+        background-color: #e3f2fd !important;  /* Bleu très clair au survol */
+        transition: background-color 0.2s ease;
+    }
+    .deleted-product {
+        background-color: #ffe6e6 !important;
+    }
+    .deleted-product:hover {
+        background-color: #ffcccc !important;  /* Rouge plus clair au survol */
+    }
+</style>
+
+je veux justement rajouter la couleur des entetes des colonnes fond noir , lettres en blanc
+<style>
+    /* ... autres styles inchangés ... */
+
+    .user-table th {
+        background-color: #000000; /* Fond noir */
+        color: white; /* Texte blanc */
+        cursor: pointer;
+        position: relative;
+        padding-right: 20px;
+        font-weight: bold; /* Pour un meilleur contraste */
+    }
+
+    .user-table th[data-column]::after {
+        content: '▼';
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.8em;
+        opacity: 0.7;
+        color: white; /* Flèche en blanc */
+    }
+
+    .user-table th[data-column].asc::after {
+        content: '▲';
+        opacity: 1;
+        color: white;
+    }
+
+    .user-table th[data-column].desc::after {
+        content: '▼';
+        opacity: 1;
+        color: white;
+    }
+
+    .user-table th[data-column]:hover {
+        background-color: #333333; /* Gris foncé au survol */
+    }
+
+    /* ... autres styles inchangés ... */
+</style>
