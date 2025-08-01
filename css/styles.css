@@ -516,3 +516,31 @@ th i {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
+/* Modal de confirmation de déconnexion */
+.logout-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Ajoutez ces propriétés flex pour centrer le modal */
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 10000;
+    /* Supprimez margin: 15% auto; car nous utilisons flexbox maintenant */
+}

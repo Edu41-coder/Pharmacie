@@ -16,12 +16,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Pharmacie_S/PHP/auth/header.php';
     }
     ?>
 </head>
-<script>
-    function toggleMenu() {
-        const nav = document.querySelector('nav ul');
-        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-    }
-</script>
 
 <body>
     <header>
@@ -29,16 +23,17 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Pharmacie_S/PHP/auth/header.php';
         <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
         <nav>
             <ul>
-                <li><a href="/Pharmacie_S/index.php">Accueil</a></li> <!-- Lien Accueil -->
-                <li><a href="/Pharmacie_S/PHP/auth/logout.php">Déconnexion</a></li>
+                <li style="margin-right: 50px;">
+                    <a href="#" onclick="showLogoutModal()" style="background-color: #cc5500 !important; color: white !important; padding: 8px 16px; border-radius: 5px; font-weight: bold; text-decoration: none; transition: all 0.3s ease; border: 2px solid #cc5500;" onmouseover="this.style.backgroundColor='#b54800'; this.style.borderColor='#b54800'; this.style.transform='translateY(-1px)'" onmouseout="this.style.backgroundColor='#cc5500'; this.style.borderColor='#cc5500'; this.style.transform='translateY(0)'">Déconnexion</a>
+                </li>    
+                <li><a href="/Pharmacie_S/index.php">Accueil</a></li>
                 <li><a href="/Pharmacie_S/Views/ventes/create_vente.php">Ventes</a></li>
                 <li><a href="/Pharmacie_S/Views/produits/index_produits.php">Produits</a></li>
                 <li><a href="/Pharmacie_S/Views/clients/index_clients.php">Clients</a></li>
                 <li><a href="/Pharmacie_S/Views/inventaire/index_inventaire.php">Inventaire</a></li>
                 <li><a href="/Pharmacie_S/Views/a_commander/index_a_commander.php">À Commander</a></li>
                 <li><a href="/Pharmacie_S/Views/mes_documents/index_mes_documents.php">Mes Documents</a></li>
-                <?php if ($role == 1): // Admin 
-                ?>
+                <?php if (isset($role) && $role == 1): ?>
                     <li><a href="/Pharmacie_S/Views/comptabilité/index_comptabilité.php">Comptabilité</a></li>
                     <li><a href="/Pharmacie_S/Views/parametre/edit_TVA.php">TVA</a></li>
                     <li><a href="/Pharmacie_S/Views/commande/index_commande.php">Passer Commande</a></li>
@@ -47,4 +42,17 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/Pharmacie_S/PHP/auth/header.php';
             </ul>
         </nav>
     </header>
+
+    <!-- Modal de confirmation de déconnexion -->
+    <div id="logoutModal" class="logout-modal">
+        <div class="logout-modal-content">
+            <h3>Confirmation de déconnexion</h3>
+            <p>Êtes-vous sûr de vouloir vous déconnecter ?</p>
+            <div class="logout-modal-buttons">
+                <button class="confirm-logout" onclick="confirmLogout()">Oui, me déconnecter</button>
+                <button class="cancel-logout" onclick="hideLogoutModal()">Annuler</button>
+            </div>
+        </div>
+    </div>
+
     <main>
